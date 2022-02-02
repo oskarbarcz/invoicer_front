@@ -1,11 +1,11 @@
 import './style.sass'
 import DocumentParty from "../DocumentParty";
 
-function DocumentParties () {
+function DocumentParties ({buyer, seller}) {
     return (
         <div className="document-parties">
-            <DocumentParty/>
-            <DocumentParty/>
+            <DocumentParty seller={seller} />
+            <DocumentParty buyer={buyer} />
         </div>
     )
 }
