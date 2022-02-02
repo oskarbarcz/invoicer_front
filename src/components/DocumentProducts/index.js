@@ -1,6 +1,22 @@
 import './style.sass'
 
-function DocumentProducts() {
+function DocumentProducts({products}) {
+
+  const productList = products.map((product)=>{return (
+    <tr key={product.order} className="document-products__table-row">
+      <td className="document-products__table-field">{product.order}</td>
+      <td className="document-products__table-field">{product.name}</td>
+      <td className="document-products__table-field">{product.unit}</td>
+      <td className="document-products__table-field">{product.quantity}</td>
+      <td className="document-products__table-field">{product.unitPrice}</td>
+      <td className="document-products__table-field">{product.netAmount}</td>
+      <td className="document-products__table-field">{product.vatRate}</td>
+      <td className="document-products__table-field">{product.vatAmount}</td>
+      <td className="document-products__table-field">{product.grossAmount}</td>
+    </tr>
+  );
+  });
+
   return (
     <div className="document-products">
       <table className="document-products__table">
@@ -18,28 +34,7 @@ function DocumentProducts() {
           </tr>
         </thead>
         <tbody>
-          <tr className="document-products__table-row">
-            <td className="document-products__table-field">1</td>
-            <td className="document-products__table-field">Usługa programowania</td>
-            <td className="document-products__table-field">szt.</td>
-            <td className="document-products__table-field">1</td>
-            <td className="document-products__table-field">24 000,00</td>
-            <td className="document-products__table-field">24 000,00</td>
-            <td className="document-products__table-field">23%</td>
-            <td className="document-products__table-field">5 220,00</td>
-            <td className="document-products__table-field">29 520,00</td>
-          </tr>
-          <tr className="document-products__table-row">
-            <td className="document-products__table-field">2</td>
-            <td className="document-products__table-field">Usługi doradcze</td>
-            <td className="document-products__table-field">szt.</td>
-            <td className="document-products__table-field">2</td>
-            <td className="document-products__table-field">1 000,00</td>
-            <td className="document-products__table-field">2 000,00</td>
-            <td className="document-products__table-field">23%</td>
-            <td className="document-products__table-field">460,00</td>
-            <td className="document-products__table-field">2 460,00</td>
-          </tr>
+          {productList}
         </tbody>
       </table>
     </div>
