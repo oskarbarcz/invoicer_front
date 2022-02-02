@@ -7,10 +7,14 @@ import DocumentSignatures from "../DocumentSignatures";
 
 function Document () {
 
+    const invoiceDetails = {
+      documentNumber: '17/2022'
+    };
+
     return (
         <div className="document">
             <DocumentIssueDetails/>
-            <DocumentTitle invoiceNumber={'17/2022'}/>
+            <DocumentTitle invoiceNumber={invoiceDetails.documentNumber}/>
             <DocumentParties/>
             <DocumentProducts/>
             <DocumentSignatures/>
