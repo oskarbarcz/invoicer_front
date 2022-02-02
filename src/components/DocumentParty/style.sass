@@ -1,18 +1,30 @@
 .document-party
-  height: 135px
   width: calc(50% - 10px)
-  margin: 5px
-  padding: 5px
+  margin: 10px 5px
+  padding: 0 5px
   &__title
     font-family: 'Montserrat', sans-serif
     font-weight: 400
-    font-size: 0.8em
+    font-size: 1em
     margin-bottom: 10px
+    padding-left: 7.5px
+    position: relative
+    &::before
+      content: ''
+      background: #FCA311
+      display: block
+      position: absolute
+      left: 0
+      top: 0
+      height: 100%
+      border-radius: 1px
+      width: 3px
   &__text
     font-family: 'Roboto', sans-serif
     display: block
     line-height: 1.1
     font-size: 0.8em
+    margin-left: 5px
     &--name
       padding-bottom: 5px
       font-weight: 700
