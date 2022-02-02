@@ -4,8 +4,8 @@ import DocumentSignature from "../DocumentSignature";
 function DocumentSignatures () {
     return (
         <div className="document-signatures">
-            <DocumentSignature/>
-            <DocumentSignature/>
+            <DocumentSignature seller/>
+            <DocumentSignature buyer/>
         </div>
     )
 }
