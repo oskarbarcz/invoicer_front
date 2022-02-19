@@ -35,7 +35,12 @@ const data = {
       vatAmount: "230,00",
       grossAmount: "1 230,00"
     }
-  ]
+  ],
+  issueDetails:{
+    issuePlace: "Warszawa",
+    issueDate: "01.01.2022",
+    sellDate: "01.01.2022"
+  }
 };
 
 export default data;
