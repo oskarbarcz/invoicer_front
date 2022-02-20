@@ -7,8 +7,6 @@ import DocumentSignatures from "../DocumentSignatures";
 import invoiceDetails from '../../mocks/invoiceMock.js';
 
 function Document() {
-
-
   return (
     <div className="document">
       <DocumentIssueDetails/>
