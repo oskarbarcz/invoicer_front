@@ -1,23 +1,14 @@
 import './style.sass'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import {useState} from "react";
 
-function SidebarSection() {
-  const [expanded, setExpanded] = useState(true);
+function SidebarSection({defaultExpanded = true, children}) {
+  const [expanded, setExpanded] = useState(defaultExpanded);
 
   const onHideOrShow = function (){
     setExpanded(!expanded);
-  }
-  let body = null;
-
-  if(expanded){
-    body = (
-      <div className="sidebar_section__body">
-      Section body
-    </div>
-    );
   }
 
   return (
@@ -28,10 +19,10 @@ function SidebarSection() {
         </span>
         <h2 className="sidebar_section__title">Some name</h2>
         <span className="sidebar_section__header-click">
-          <FontAwesomeIcon icon={faChevronDown} fixedWidth/>
+          <FontAwesomeIcon icon={expanded ? faChevronDown: faChevronUp} fixedWidth/>
         </span>
       </button>
-      {body}
+      {expanded ? children : null}
     </div>
   );
 }
